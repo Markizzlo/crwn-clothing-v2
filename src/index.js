@@ -7,10 +7,9 @@ import { Elements } from "@stripe/react-stripe-js";
 
 import { store, persistor } from "./store/store";
 import { stripePromise } from "./utils/stripe/stripe.utils";
+import * as serviceWorker from "./serviceWorkerRegistration";
 
 import App from "./App";
-
-import "./index.scss";
 
 const rootElement = document.getElementById("root");
 
@@ -28,3 +27,5 @@ render(
   </React.StrictMode>,
   rootElement
 );
+
+serviceWorker.register();
